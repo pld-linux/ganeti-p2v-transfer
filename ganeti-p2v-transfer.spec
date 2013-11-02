@@ -12,9 +12,18 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	docutils
 BuildRequires:	rpmbuild(macros) >= 1.647
+Requires:	blockdev
+Requires:	coreutils
+Requires:	dump
+Requires:	e2fsprogs
 Requires:	ganeti
+Requires:	kpartx
+Requires:	losetup
 Requires:	mawk
+Requires:	mount
+Requires:	sed
 Requires:	tar
+Requires:	util-linux
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
