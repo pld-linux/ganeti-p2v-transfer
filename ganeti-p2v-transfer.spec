@@ -66,6 +66,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install-source install-target \
 	DESTDIR=$RPM_BUILD_ROOT
 
+
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/ganeti/os/p2v-target/variants.list $RPM_BUILD_ROOT%{_sysconfdir}/ganeti/instance-p2v-target
+ln -s %{_sysconfdir}/ganeti/instance-p2v-target//variants.list $RPM_BUILD_ROOT%{_datadir}/ganeti/os/p2v-target/variants.list
+
 %{__rm} -r $RPM_BUILD_ROOT/%{_docdir}/%{name}
 
 %clean
@@ -92,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sysconfdir}/ganeti/instance-p2v-target/hooks/xen-hvc0
 %dir %{_sysconfdir}/ganeti/instance-p2v-target/variants
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ganeti/instance-p2v-target/variants/default.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ganeti/instance-p2v-target/variants.list
 %dir %{_datadir}/ganeti/os/p2v-target
 %{_datadir}/ganeti/os/p2v-target/common.sh
 %attr(755,root,root) %{_datadir}/ganeti/os/p2v-target/create
