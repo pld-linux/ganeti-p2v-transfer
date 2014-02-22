@@ -7,6 +7,7 @@ Group:		Applications/System
 Source0:	https://ganeti.googlecode.com/files/%{name}-%{version}.tar.gz
 # Source0-md5:	c0333098304fa1868ffcaa82a942eba0
 Patch0:		DESTDIR.patch
+Patch1:		kpartx-sync.patch
 URL:		https://code.google.com/p/ganeti/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -50,6 +51,7 @@ as necessary to gain access to the bootstrap OS.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}

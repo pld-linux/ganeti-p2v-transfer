@@ -1,0 +1,11 @@
+--- ganeti-p2v-transfer-0.1/instance-p2v-target/common.sh.in~	2013-07-11 11:50:24.000000000 +0200
++++ ganeti-p2v-transfer-0.1/instance-p2v-target/common.sh.in	2014-02-06 15:51:47.751092320 +0100
+@@ -105,7 +105,7 @@
+     log_error "Cannot interpret kpartx output and get partition mapping"
+     exit 1
+   fi
+-  kpartx -a -p- $blockdev > /dev/null
++  kpartx -a -s -p- $blockdev > /dev/null
+   filesystem_dev="/dev/mapper/$filesystem_dev_base"
+   if [ ! -b "$filesystem_dev" ]; then
+     log_error "Can't find kpartx mapped partition: $filesystem_dev"
