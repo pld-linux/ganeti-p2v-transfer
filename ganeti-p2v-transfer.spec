@@ -1,7 +1,7 @@
 Summary:	Tool for converting a physical computer into a Ganeti instance
 Name:		ganeti-p2v-transfer
 Version:	0.1
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://ganeti.googlecode.com/files/%{name}-%{version}.tar.gz
